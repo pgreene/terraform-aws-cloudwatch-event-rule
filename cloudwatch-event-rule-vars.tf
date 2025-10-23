@@ -1,22 +1,28 @@
 variable "name" {
-  description = "use naming module https://github.com/Voyanta/terraform-terraform-label"
-  default = ""
+  description = "name"
+  default     = null
 }
 
 variable "rule_description" {
   description = "Event rule description"
-  default = "Scheduler to trigger lambda function"
+  default     = null
 }
 variable "schedule_expression" {
   description = "Event Schedule for Cloutwatch"
-  default     = "rate(5 minutes)"
-}
-
-variable "is_enabled" {
-  description = "true or false"
-  default     = "true"
+  default     = null
 }
 
 variable "role_arn" {
-  default = ""
+  description = "iam role arn"
+  default     = null
+}
+
+variable "state" {
+  description = "Event rule state"
+  default     = "ENABLED"
+}
+
+variable "tags" {
+  description = "Tags for the event rule"
+  default     = {}
 }
